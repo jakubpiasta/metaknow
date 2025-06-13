@@ -1,20 +1,33 @@
-// src/App.jsx
-import './index.css'; // Upewnij się, że importujesz style Tailwind
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Items from './pages/Items';
+import Meta from './pages/Meta';
+import Quiz from './pages/Quiz';
 
 export default function App() {
   return (
-    <div className="bg-lol-dark min-h-screen text-white p-8">
-      <h1 className="text-4xl font-bold text-lol-gold mb-6">
-        Witaj w Metaknow!
-      </h1>
-      <p className="text-lg text-lol-blue">
-        Aplikacja do nauki mechanik League of Legends
-      </p>
-      
-      {/* Przykładowy przycisk z Twoimi kolorami */}
-      <button className="mt-6 bg-lol-gold hover:bg-lol-red text-lol-dark font-bold py-2 px-4 rounded transition-colors">
-        Rozpocznij naukę
-      </button>
+    <div className="bg-lol-dark min-h-screen text-white">
+      {/* Nawigacja */}
+      <nav className="bg-black/80 p-4 border-b border-lol-gold/50">
+        <div className="container mx-auto flex justify-between">
+          <Link to="/" className="text-xl font-bold text-lol-gold">Metaknow</Link>
+          <div className="flex gap-4">
+            <Link to="/items" className="hover:text-lol-blue">Przedmioty</Link>
+            <Link to="/meta" className="hover:text-lol-blue">Meta</Link>
+            <Link to="/quiz" className="hover:text-lol-blue">Quiz</Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Główne ścieżki */}
+      <main className="container mx-auto p-6">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/items" element={<Items />} />
+          <Route path="/meta" element={<Meta />} />
+          <Route path="/quiz" element={<Quiz />} />
+        </Routes>
+      </main>
     </div>
   );
 }

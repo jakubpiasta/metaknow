@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Komponent musi być wyraźnie eksportowany jako domyślny
 const Quiz = () => {
   return (
     <div className="p-6">

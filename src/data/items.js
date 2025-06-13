@@ -11,5 +11,4 @@ export const items = [
     description: "+80 Mocy Umiejętności, +45 Pancerza, Aktywna: Niezniszczalność",
     tags: ["AP", "Obrona"]
   },
-  // Dodaj więcej przedmiotów...
 ];

@@ -10,7 +10,7 @@ export default function App() {
       {/* Nawigacja */}
       <nav className="bg-black/80 p-4 border-b border-lol-gold/50">
         <div className="container mx-auto flex justify-between">
-          <Link to="/" className="text-xl font-bold text-lol-gold">Metaknow</Link>
+          <Link to="/" className="text-xl font-bold text-lol-gold">MetaKnow</Link>
           <div className="flex gap-4">
             <Link to="/items" className="hover:text-lol-blue">Przedmioty</Link>
             <Link to="/meta" className="hover:text-lol-blue">Meta</Link>

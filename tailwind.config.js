@@ -2,12 +2,12 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Upewnij się, że ścieżki obejmują wszystkie pliki projektu
+    "./src/**/*.{js,ts,jsx,tsx}", 
   ],
   theme: {
     extend: {
-      colors: { // Tutaj dodajemy własne kolory
-        'lol-dark': '#0a0a12', // Ciemny bazowy kolor (np. tło)
+      colors: { 
+        'lol-dark': '#0a0a12', // Ciemny bazowy kolor (tło)
         'lol-gold': '#c8aa6e',  // Złoty akcent (przyciski, nagłówki)
         'lol-blue': '#1a8cff',  // Niebieski (linki, akcenty)
         'lol-red': '#e84057',   // Czerwony (błędy, alerty)

@@ -13,7 +13,7 @@ export default function Home() {
             Opanuj fundamenty League of Legends dzięki naszym narzędziom edukacyjnym
           </p>
           <Link 
-            to="/quiz" 
+            to="/basics" 
             className="inline-block bg-lol-blue hover:bg-lol-gold text-lol-dark font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Rozpocznij naukę

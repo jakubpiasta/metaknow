@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Basics() {
   const [activeTab, setActiveTab] = useState('roles');
+  const [searchChampion, setSearchChampion] = useState('');
+  const [counterResults, setCounterResults] = useState(null);
 
   const roles = [
     {

@@ -1,5 +1,8 @@
+// KOMPLETNA BAZA PRZEDMIOTÓW LEAGUE OF LEGENDS
+// Patch 15.22 (Listopad 2024)
+
 export const items = [
-  // STARTER ITEMS
+  // ==================== STARTER ITEMS ====================
   {
     id: 1,
     name: "Doran's Blade",
@@ -9,8 +12,8 @@ export const items = [
     passive: "+2.5% Omnivamp",
     description: "Starter item dla ADC i niektórych Top lanerów",
     whenToBuy: "Kupuj jako pierwszy item jeśli grasz agresywnie na linii i chcesz tradować",
-    goodFor: ["ADC", "Top"],
-    image: "1055" // ID z Data Dragon
+    goodFor: ["ADC", "Top Fighter"],
+    image: "1055"
   },
   {
     id: 2,
@@ -36,22 +39,58 @@ export const items = [
     goodFor: ["Top", "Support"],
     image: "1054"
   },
-
-  // AD ITEMS
   {
     id: 4,
-    name: "Infinity Edge",
-    category: "AD",
-    price: 3400,
-    stats: "+70 AD, +20% Crit",
-    passive: "Zwiększa critical strike damage o 35%",
-    description: "Must-have dla każdego ADC w late game",
-    whenToBuy: "Jako 3-4 item, gdy masz już 60%+ crit chance",
-    goodFor: ["ADC"],
-    image: "3031"
+    name: "Long Sword",
+    category: "Starter",
+    price: 350,
+    stats: "+10 AD",
+    passive: "Brak",
+    description: "Podstawowy komponent AD",
+    whenToBuy: "Component do większych itemów",
+    goodFor: ["ADC", "Assassin", "Fighter"],
+    image: "1036"
   },
   {
     id: 5,
+    name: "Amplifying Tome",
+    category: "Starter",
+    price: 435,
+    stats: "+20 AP",
+    passive: "Brak",
+    description: "Podstawowy komponent AP",
+    whenToBuy: "Component do większych itemów AP",
+    goodFor: ["Mid AP", "Support AP"],
+    image: "1052"
+  },
+  {
+    id: 6,
+    name: "Ruby Crystal",
+    category: "Starter",
+    price: 400,
+    stats: "+150 HP",
+    passive: "Brak",
+    description: "Komponent HP",
+    whenToBuy: "Component do itemów z HP",
+    goodFor: ["Tank", "Fighter", "Support"],
+    image: "1028"
+  },
+  {
+    id: 7,
+    name: "Cloth Armor",
+    category: "Starter",
+    price: 300,
+    stats: "+15 Armor",
+    passive: "Brak",
+    description: "Podstawowa obrona fizyczna",
+    whenToBuy: "Start przeciwko heavy AD",
+    goodFor: ["Tank", "Support"],
+    image: "1029"
+  },
+
+  // ==================== MYTHIC AD ITEMS ====================
+  {
+    id: 8,
     name: "Kraken Slayer",
     category: "AD",
     price: 3400,
@@ -63,7 +102,81 @@ export const items = [
     image: "6672"
   },
   {
-    id: 6,
+    id: 9,
+    name: "Galeforce",
+    category: "AD",
+    price: 3400,
+    stats: "+60 AD, +25% AS, +20% Crit",
+    passive: "Aktywna: Dash + damage",
+    description: "Mythic z mobility",
+    whenToBuy: "Gdy potrzebujesz escape/gap closer",
+    goodFor: ["ADC"],
+    image: "6671"
+  },
+  {
+    id: 10,
+    name: "Immortal Shieldbow",
+    category: "AD",
+    price: 3400,
+    stats: "+55 AD, +20% AS, +20% Crit",
+    passive: "Shield przy niskim HP + lifesteal",
+    description: "Defensywny mythic ADC",
+    whenToBuy: "Przeciwko assassynom/burst damage",
+    goodFor: ["ADC"],
+    image: "6673"
+  },
+  {
+    id: 11,
+    name: "Eclipse",
+    category: "AD",
+    price: 3100,
+    stats: "+55 AD, +18 Lethality",
+    passive: "Shield + MS po hit combo",
+    description: "Lethality mythic",
+    whenToBuy: "Dla assassinów przeciwko squishy targets",
+    goodFor: ["Assassin"],
+    image: "6692"
+  },
+  {
+    id: 12,
+    name: "Duskblade of Draktharr",
+    category: "AD",
+    price: 3100,
+    stats: "+60 AD, +18 Lethality",
+    passive: "Invisibility po kill",
+    description: "Assassin mythic",
+    whenToBuy: "Dla assassinów w teamfightach",
+    goodFor: ["Assassin"],
+    image: "6691"
+  },
+  {
+    id: 13,
+    name: "Prowler's Claw",
+    category: "AD",
+    price: 3100,
+    stats: "+55 AD, +21 Lethality",
+    passive: "Aktywna: Dash do wroga + damage",
+    description: "Mobility assassin mythic",
+    whenToBuy: "Dla assassinów potrzebujących gap close",
+    goodFor: ["Assassin"],
+    image: "6693"
+  },
+
+  // ==================== LEGENDARY AD ITEMS ====================
+  {
+    id: 14,
+    name: "Infinity Edge",
+    category: "AD",
+    price: 3400,
+    stats: "+70 AD, +20% Crit",
+    passive: "Zwiększa critical strike damage o 35%",
+    description: "Must-have dla każdego ADC w late game",
+    whenToBuy: "Jako 3-4 item, gdy masz już 60%+ crit chance",
+    goodFor: ["ADC"],
+    image: "3031"
+  },
+  {
+    id: 15,
     name: "The Collector",
     category: "AD",
     price: 3000,
@@ -74,10 +187,166 @@ export const items = [
     goodFor: ["ADC", "Assassin"],
     image: "6676"
   },
-
-  // AP ITEMS
   {
-    id: 7,
+    id: 16,
+    name: "Bloodthirster",
+    category: "AD",
+    price: 3400,
+    stats: "+55 AD, +20% Crit",
+    passive: "+20% Lifesteal, Shield przy full HP",
+    description: "Sustain ADC item",
+    whenToBuy: "Late game dla survivability",
+    goodFor: ["ADC"],
+    image: "3072"
+  },
+  {
+    id: 17,
+    name: "Lord Dominik's Regards",
+    category: "AD",
+    price: 3000,
+    stats: "+35 AD, +20% Crit, +35% Armor Pen",
+    passive: "Bonus damage vs high HP targets",
+    description: "Armor penetration item",
+    whenToBuy: "Przeciwko tankom z dużym armor",
+    goodFor: ["ADC"],
+    image: "3036"
+  },
+  {
+    id: 18,
+    name: "Mortal Reminder",
+    category: "AD",
+    price: 3000,
+    stats: "+35 AD, +20% Crit, +25% Armor Pen",
+    passive: "Grievous Wounds (anty-heal)",
+    description: "Anti-healing ADC item",
+    whenToBuy: "Przeciwko teamom z dużym healingiem",
+    goodFor: ["ADC"],
+    image: "3033"
+  },
+  {
+    id: 19,
+    name: "Rapid Firecannon",
+    category: "AD",
+    price: 2600,
+    stats: "+20% AS, +20% Crit",
+    passive: "Zwiększa range co kilka ataków",
+    description: "Range extension item",
+    whenToBuy: "Dla poke i kite ADC",
+    goodFor: ["ADC"],
+    image: "3094"
+  },
+  {
+    id: 20,
+    name: "Phantom Dancer",
+    category: "AD",
+    price: 2600,
+    stats: "+20% AS, +20% Crit",
+    passive: "MS + Ghost przy walce",
+    description: "Kiting item",
+    whenToBuy: "Dla mobility i kite",
+    goodFor: ["ADC"],
+    image: "3046"
+  },
+  {
+    id: 21,
+    name: "Runaan's Hurricane",
+    category: "AD",
+    price: 2600,
+    stats: "+40% AS, +20% Crit",
+    passive: "Atakuje 2 dodatkowe cele",
+    description: "AoE damage item",
+    whenToBuy: "Dla on-hit builds i wave clear",
+    goodFor: ["ADC"],
+    image: "3085"
+  },
+  {
+    id: 22,
+    name: "Guardian Angel",
+    category: "AD",
+    price: 3200,
+    stats: "+45 AD, +40 Armor",
+    passive: "Revive po śmierci",
+    description: "Defensive AD item",
+    whenToBuy: "Gdy jesteś fokusowany w teamfightach",
+    goodFor: ["ADC", "Assassin", "Fighter"],
+    image: "3026"
+  },
+  {
+    id: 23,
+    name: "Black Cleaver",
+    category: "AD",
+    price: 3000,
+    stats: "+50 AD, +350 HP, +30 AH",
+    passive: "Shred armor + MS on hit",
+    description: "Bruiser item",
+    whenToBuy: "Dla fighterów przeciwko tankom",
+    goodFor: ["Fighter", "Assassin"],
+    image: "3071"
+  },
+  {
+    id: 24,
+    name: "Serylda's Grudge",
+    category: "AD",
+    price: 3200,
+    stats: "+55 AD, +30% Armor Pen, +15 AH",
+    passive: "Slow na abilities",
+    description: "Lethality + slow item",
+    whenToBuy: "Dla assassinów late game",
+    goodFor: ["Assassin"],
+    image: "6694"
+  },
+  {
+    id: 25,
+    name: "Edge of Night",
+    category: "AD",
+    price: 2900,
+    stats: "+50 AD, +10 Lethality",
+    passive: "Spell shield",
+    description: "Anti-CC item",
+    whenToBuy: "Przeciwko CC/Engage",
+    goodFor: ["Assassin"],
+    image: "3814"
+  },
+  {
+    id: 26,
+    name: "Youmuu's Ghostblade",
+    category: "AD",
+    price: 2900,
+    stats: "+55 AD, +18 Lethality",
+    passive: "Aktywna: MS burst",
+    description: "Mobility lethality item",
+    whenToBuy: "Dla roaming assassinów",
+    goodFor: ["Assassin"],
+    image: "3142"
+  },
+  {
+    id: 27,
+    name: "Death's Dance",
+    category: "AD",
+    price: 3200,
+    stats: "+55 AD, +45 Armor, +15 AH",
+    passive: "Damage delay + heal on kill",
+    description: "Sustain bruiser item",
+    whenToBuy: "Dla fighterów w extended fights",
+    goodFor: ["Fighter", "Assassin"],
+    image: "6333"
+  },
+  {
+    id: 28,
+    name: "Maw of Malmortius",
+    category: "AD",
+    price: 2800,
+    stats: "+55 AD, +50 MR",
+    passive: "Shield vs magic damage",
+    description: "Anti-AP item",
+    whenToBuy: "Przeciwko heavy AP teamom",
+    goodFor: ["Assassin", "Fighter"],
+    image: "3156"
+  },
+
+  // ==================== MYTHIC AP ITEMS ====================
+  {
+    id: 29,
     name: "Luden's Tempest",
     category: "AP",
     price: 3200,
@@ -89,7 +358,69 @@ export const items = [
     image: "6655"
   },
   {
-    id: 8,
+    id: 30,
+    name: "Liandry's Anguish",
+    category: "AP",
+    price: 3200,
+    stats: "+90 AP, +600 Mana, +20 AH",
+    passive: "Burn damage over time",
+    description: "DoT mythic dla magów",
+    whenToBuy: "Przeciwko tankom, dla sustained damage",
+    goodFor: ["Mid AP", "Support AP"],
+    image: "6653"
+  },
+  {
+    id: 31,
+    name: "Everfrost",
+    category: "AP",
+    price: 3200,
+    stats: "+90 AP, +600 Mana, +20 AH",
+    passive: "Aktywna: Root + damage",
+    description: "CC mythic",
+    whenToBuy: "Dla magów potrzebujących CC",
+    goodFor: ["Mid AP"],
+    image: "6656"
+  },
+  {
+    id: 32,
+    name: "Night Harvester",
+    category: "AP",
+    price: 3200,
+    stats: "+90 AP, +300 HP, +25 AH",
+    passive: "Burst damage + MS na different champions",
+    description: "Mobility burst mythic",
+    whenToBuy: "Dla assassinów AP",
+    goodFor: ["Assassin AP"],
+    image: "4636"
+  },
+  {
+    id: 33,
+    name: "Hextech Rocketbelt",
+    category: "AP",
+    price: 3200,
+    stats: "+90 AP, +300 HP, +15 AH",
+    passive: "Aktywna: Dash + damage",
+    description: "Mobility mythic AP",
+    whenToBuy: "Dla magów potrzebujących gap close",
+    goodFor: ["Mid AP", "Assassin AP"],
+    image: "3152"
+  },
+
+  // ==================== LEGENDARY AP ITEMS ====================
+  {
+    id: 34,
+    name: "Rabadon's Deathcap",
+    category: "AP",
+    price: 3600,
+    stats: "+120 AP",
+    passive: "Zwiększa całkowite AP o 35%",
+    description: "Najdroższy, ale najbardziej opłacalny AP item",
+    whenToBuy: "Jako 3-4 item gdy już masz trochę AP",
+    goodFor: ["Mid AP", "Support AP"],
+    image: "3089"
+  },
+  {
+    id: 35,
     name: "Zhonya's Hourglass",
     category: "AP",
     price: 3250,
@@ -101,21 +432,129 @@ export const items = [
     image: "3157"
   },
   {
-    id: 9,
-    name: "Rabadon's Deathcap",
+    id: 36,
+    name: "Void Staff",
     category: "AP",
-    price: 3600,
-    stats: "+120 AP",
-    passive: "Zwiększa całkowite AP o 35%",
-    description: "Najdroższy, ale najbardziej opłacalny AP item",
-    whenToBuy: "Jako 3-4 item gdy już masz trochę AP",
+    price: 2800,
+    stats: "+100 AP, +40% Magic Pen",
+    passive: "Brak",
+    description: "Magic penetration item",
+    whenToBuy: "Przeciwko MR/tankom",
+    goodFor: ["Mid AP"],
+    image: "3135"
+  },
+  {
+    id: 37,
+    name: "Morellonomicon",
+    category: "AP",
+    price: 2500,
+    stats: "+80 AP, +250 HP",
+    passive: "Grievous Wounds (anty-heal)",
+    description: "Anti-healing AP item",
+    whenToBuy: "Przeciwko teamom z dużym healingiem",
     goodFor: ["Mid AP", "Support AP"],
-    image: "3089"
+    image: "3165"
+  },
+  {
+    id: 38,
+    name: "Banshee's Veil",
+    category: "AP",
+    price: 3100,
+    stats: "+80 AP, +50 MR",
+    passive: "Spell shield",
+    description: "Anti-magic item",
+    whenToBuy: "Przeciwko heavy AP/CC",
+    goodFor: ["Mid AP"],
+    image: "3102"
+  },
+  {
+    id: 39,
+    name: "Horizon Focus",
+    category: "AP",
+    price: 3000,
+    stats: "+100 AP",
+    passive: "Bonus damage na długi zasięg + vision",
+    description: "Long range mage item",
+    whenToBuy: "Dla magów z długim range",
+    goodFor: ["Mid AP"],
+    image: "4628"
+  },
+  {
+    id: 40,
+    name: "Cosmic Drive",
+    category: "AP",
+    price: 3000,
+    stats: "+75 AP, +200 HP, +30 AH",
+    passive: "MS przy użyciu abilities",
+    description: "Mobility AP item",
+    whenToBuy: "Dla magów potrzebujących MS",
+    goodFor: ["Mid AP"],
+    image: "4629"
+  },
+  {
+    id: 41,
+    name: "Shadowflame",
+    category: "AP",
+    price: 3000,
+    stats: "+100 AP",
+    passive: "Magic penetration vs low HP/shields",
+    description: "Burst penetration item",
+    whenToBuy: "Dla burst magów vs shields",
+    goodFor: ["Mid AP"],
+    image: "4645"
+  },
+  {
+    id: 42,
+    name: "Demonic Embrace",
+    category: "AP",
+    price: 3000,
+    stats: "+70 AP, +450 HP",
+    passive: "Burn damage + tanki przy burn",
+    description: "Tankier AP item",
+    whenToBuy: "Dla battle mages",
+    goodFor: ["Mid AP", "Fighter AP"],
+    image: "4637"
+  },
+  {
+    id: 43,
+    name: "Rylai's Crystal Scepter",
+    category: "AP",
+    price: 2600,
+    stats: "+75 AP, +400 HP",
+    passive: "Slow na wszystkich damaging abilities",
+    description: "Utility AP item",
+    whenToBuy: "Dla kite i utility",
+    goodFor: ["Mid AP"],
+    image: "3116"
+  },
+  {
+    id: 44,
+    name: "Nashor's Tooth",
+    category: "AP",
+    price: 3000,
+    stats: "+90 AP, +50% AS",
+    passive: "On-hit magic damage",
+    description: "On-hit AP item",
+    whenToBuy: "Dla AP champions z auto attacks (Kayle, Azir)",
+    goodFor: ["Mid AP", "On-hit"],
+    image: "3115"
+  },
+  {
+    id: 45,
+    name: "Lich Bane",
+    category: "AP",
+    price: 3100,
+    stats: "+100 AP, +15 AH",
+    passive: "Spellblade: bonus AP damage on AA after spell",
+    description: "Burst AA AP item",
+    whenToBuy: "Dla magów używających AA w combo",
+    goodFor: ["Mid AP", "Assassin AP"],
+    image: "3100"
   },
 
-  // TANK ITEMS
+  // ==================== MYTHIC TANK ITEMS ====================
   {
-    id: 10,
+    id: 46,
     name: "Sunfire Aegis",
     category: "Tank",
     price: 3200,
@@ -124,10 +563,36 @@ export const items = [
     description: "Mythic tank item - damage + tankiness",
     whenToBuy: "Pierwszy item dla tanków którzy chcą clearować fale",
     goodFor: ["Top Tank", "Jungle Tank"],
-    image: "3068"
+    image: "6630"
   },
   {
-    id: 11,
+    id: 47,
+    name: "Frostfire Gauntlet",
+    category: "Tank",
+    price: 3200,
+    stats: "+450 HP, +25 Armor, +25 MR, +20 AH",
+    passive: "Slow na AA + rośniesz w size",
+    description: "Utility tank mythic",
+    whenToBuy: "Dla tanków potrzebujących slow",
+    goodFor: ["Top Tank", "Jungle Tank"],
+    image: "6631"
+  },
+  {
+    id: 48,
+    name: "Turbo Chemtank",
+    category: "Tank",
+    price: 2800,
+    stats: "+400 HP, +25 Armor, +25 MR, +20 AH",
+    passive: "Aktywna: MS burst do engage",
+    description: "Engage tank mythic",
+    whenToBuy: "Dla tanków engagujących teamfighty",
+    goodFor: ["Jungle Tank", "Support Tank"],
+    image: "6632"
+  },
+
+  // ==================== LEGENDARY TANK ITEMS ====================
+  {
+    id: 49,
     name: "Thornmail",
     category: "Tank",
     price: 2700,
@@ -139,7 +604,7 @@ export const items = [
     image: "3075"
   },
   {
-    id: 12,
+    id: 50,
     name: "Spirit Visage",
     category: "Tank",
     price: 2900,
@@ -150,10 +615,82 @@ export const items = [
     goodFor: ["Top Tank", "Jungle"],
     image: "3065"
   },
-
-  // SUPPORT ITEMS
   {
-    id: 13,
+    id: 51,
+    name: "Randuin's Omen",
+    category: "Tank",
+    price: 2700,
+    stats: "+400 HP, +60 Armor",
+    passive: "Zmniejsza crit damage + aktywna: AoE slow",
+    description: "Anti-crit tank item",
+    whenToBuy: "Przeciwko ADC/crit champions",
+    goodFor: ["Top Tank", "Jungle Tank"],
+    image: "3143"
+  },
+  {
+    id: 52,
+    name: "Frozen Heart",
+    category: "Tank",
+    price: 2500,
+    stats: "+80 Armor, +400 Mana, +20 AH",
+    passive: "Zmniejsza AS wrogów wokół",
+    description: "Anti-AS tank item",
+    whenToBuy: "Przeciwko heavy AS champions",
+    goodFor: ["Top Tank", "Support Tank"],
+    image: "3110"
+  },
+  {
+    id: 53,
+    name: "Dead Man's Plate",
+    category: "Tank",
+    price: 2900,
+    stats: "+300 HP, +45 Armor",
+    passive: "MS out of combat + bonus damage na AA",
+    description: "Mobility tank item",
+    whenToBuy: "Dla roaming/engage",
+    goodFor: ["Top Tank", "Jungle Tank"],
+    image: "3742"
+  },
+  {
+    id: 54,
+    name: "Force of Nature",
+    category: "Tank",
+    price: 2900,
+    stats: "+400 HP, +60 MR",
+    passive: "MS przy otrzymywaniu magic damage",
+    description: "MR + MS item",
+    whenToBuy: "Przeciwko heavy AP",
+    goodFor: ["Top Tank", "Jungle Tank"],
+    image: "4401"
+  },
+  {
+    id: 55,
+    name: "Warmog's Armor",
+    category: "Tank",
+    price: 3000,
+    stats: "+800 HP, +10 AH",
+    passive: "Massive HP regen out of combat",
+    description: "Pure HP item",
+    whenToBuy: "Late game dla massive HP",
+    goodFor: ["Top Tank", "Support Tank"],
+    image: "3083"
+  },
+  {
+    id: 56,
+    name: "Gargoyle Stoneplate",
+    category: "Tank",
+    price: 3300,
+    stats: "+60 Armor, +60 MR",
+    passive: "Aktywna: Shield based on HP",
+    description: "Mixed resistances + shield",
+    whenToBuy: "Przeciwko mixed damage teams",
+    goodFor: ["Top Tank", "Jungle Tank"],
+    image: "3193"
+  },
+
+  // ==================== SUPPORT ITEMS ====================
+  {
+    id: 57,
     name: "Imperial Mandate",
     category: "Support",
     price: 2300,
@@ -162,10 +699,34 @@ export const items = [
     description: "Mythic support item dla enchanterów",
     whenToBuy: "Pierwszy item dla enchanterów (Janna, Nami, Lulu)",
     goodFor: ["Support"],
-    image: "4005"
+    image: "6617"
   },
   {
-    id: 14,
+    id: 58,
+    name: "Shurelya's Battlesong",
+    category: "Support",
+    price: 2300,
+    stats: "+40 AP, +200 HP, +100% Mana Regen, +30 AH",
+    passive: "Aktywna: MS burst dla całego teamu",
+    description: "Engage support mythic",
+    whenToBuy: "Dla engage/roaming supports",
+    goodFor: ["Support"],
+    image: "2065"
+  },
+  {
+    id: 59,
+    name: "Moonstone Renewer",
+    category: "Support",
+    price: 2300,
+    stats: "+40 AP, +200 HP, +100% Mana Regen, +20 AH",
+    passive: "Heal i buff sojuszników w walce",
+    description: "Healing support mythic",
+    whenToBuy: "Dla healing enchanterów",
+    goodFor: ["Support"],
+    image: "6617"
+  },
+  {
+    id: 60,
     name: "Redemption",
     category: "Support",
     price: 2300,
@@ -177,7 +738,7 @@ export const items = [
     image: "3107"
   },
   {
-    id: 15,
+    id: 61,
     name: "Mikael's Blessing",
     category: "Support",
     price: 2300,
@@ -188,32 +749,70 @@ export const items = [
     goodFor: ["Support"],
     image: "3222"
   },
-
-  // BOOTS
   {
-    id: 16,
+    id: 62,
+    name: "Ardent Censer",
+    category: "Support",
+    price: 2300,
+    stats: "+50 AP, +100% Mana Regen, +10% Heal Power",
+    passive: "Healing/shielding buffuje AS + damage sojuszników",
+    description: "Enchanter buff item",
+    whenToBuy: "Dla enchanterów z auto-attack carries",
+    goodFor: ["Support"],
+    image: "3504"
+  },
+  {
+    id: 63,
+    name: "Staff of Flowing Water",
+    category: "Support",
+    price: 2300,
+    stats: "+50 AP, +100% Mana Regen, +10% Heal Power",
+    passive: "Healing/shielding buffuje AP + MS",
+    description: "AP enchanter item",
+    whenToBuy: "Z AP carries w teamie",
+    goodFor: ["Support"],
+    image: "6616"
+  },
+  {
+    id: 64,
+    name: "Chemtech Putrifier",
+    category: "Support",
+    price: 2300,
+    stats: "+50 AP, +100% Mana Regen",
+    passive: "Healing/shielding nakłada grievous wounds",
+    description: "Anti-heal support item",
+    whenToBuy: "Przeciwko healing teamom",
+    goodFor: ["Support"],
+    image: "3011"
+  },
+
+  // ==================== BOOTS ====================
+  {
+    id: 65,
     name: "Berserker's Greaves",
     category: "Boots",
     price: 1100,
     stats: "+35% Attack Speed",
+    passive: "Brak",
     description: "Podstawowe buty dla ADC",
     whenToBuy: "Standardowy wybór dla marksmańów",
     goodFor: ["ADC"],
     image: "3006"
   },
   {
-    id: 17,
+    id: 66,
     name: "Sorcerer's Shoes",
     category: "Boots",
     price: 1100,
     stats: "+18 Magic Penetration",
+    passive: "Brak",
     description: "Boots dla magów",
     whenToBuy: "Standardowy wybór dla AP",
     goodFor: ["Mid AP", "Support AP"],
     image: "3020"
   },
   {
-    id: 18,
+    id: 67,
     name: "Plated Steelcaps",
     category: "Boots",
     price: 1100,
@@ -223,33 +822,535 @@ export const items = [
     whenToBuy: "Przeciwko heavy AD teamom lub fed ADC",
     goodFor: ["Top", "Jungle", "Support"],
     image: "3047"
+  },
+  {
+    id: 68,
+    name: "Mercury's Treads",
+    category: "Boots",
+    price: 1100,
+    stats: "+25 MR, +30% Tenacity",
+    passive: "Zmniejsza czas trwania CC",
+    description: "Anti-CC boots",
+    whenToBuy: "Przeciwko heavy CC teamom",
+    goodFor: ["Top", "Jungle", "Mid", "ADC"],
+    image: "3111"
+  },
+  {
+    id: 69,
+    name: "Ionian Boots of Lucidity",
+    category: "Boots",
+    price: 900,
+    stats: "+20 Ability Haste",
+    passive: "+12 Summoner Spell Haste",
+    description: "CDR boots",
+    whenToBuy: "Dla ability-based champions",
+    goodFor: ["Mid", "Support", "Top"],
+    image: "3158"
+  },
+  {
+    id: 70,
+    name: "Boots of Swiftness",
+    category: "Boots",
+    price: 900,
+    stats: "+60 MS",
+    passive: "Zmniejsza slow effects o 25%",
+    description: "MS + slow resist boots",
+    whenToBuy: "Przeciwko slow-heavy teamom",
+    goodFor: ["Jungle", "Support"],
+    image: "3009"
+  },
+  {
+    id: 71,
+    name: "Mobility Boots",
+    category: "Boots",
+    price: 900,
+    stats: "+25 MS (115 out of combat)",
+    passive: "Massive MS out of combat",
+    description: "Roaming boots",
+    whenToBuy: "Dla roaming supports/junglers",
+    goodFor: ["Support", "Jungle"],
+    image: "3117"
+  },
+
+  // ==================== FIGHTER/BRUISER ITEMS ====================
+  {
+    id: 72,
+    name: "Divine Sunderer",
+    category: "Fighter",
+    price: 3300,
+    stats: "+40 AD, +300 HP, +20 AH",
+    passive: "Spellblade: % HP damage + heal",
+    description: "Mythic bruiser item vs tanks",
+    whenToBuy: "Dla bruiserów przeciwko tankom",
+    goodFor: ["Fighter", "Top"],
+    image: "6632"
+  },
+  {
+    id: 73,
+    name: "Trinity Force",
+    category: "Fighter",
+    price: 3333,
+    stats: "+45 AD, +200 HP, +30% AS, +20 AH",
+    passive: "Spellblade + stacking AS",
+    description: "All-around mythic bruiser",
+    whenToBuy: "Dla auto-attack bruiserów",
+    goodFor: ["Fighter", "Top"],
+    image: "3078"
+  },
+  {
+    id: 74,
+    name: "Stridebreaker",
+    category: "Fighter",
+    price: 3300,
+    stats: "+50 AD, +300 HP, +20 AH",
+    passive: "Aktywna: Dash + slow",
+    description: "Mobility bruiser mythic",
+    whenToBuy: "Dla juggernautów potrzebujących gap close",
+    goodFor: ["Fighter", "Top"],
+    image: "6630"
+  },
+  {
+    id: 75,
+    name: "Goredrinker",
+    category: "Fighter",
+    price: 3300,
+    stats: "+55 AD, +450 HP, +20 AH",
+    passive: "Aktywna: AoE damage + heal based on missing HP",
+    description: "Sustain bruiser mythic",
+    whenToBuy: "W teamfightach, dla sustain",
+    goodFor: ["Fighter", "Assassin"],
+    image: "6630"
+  },
+  {
+    id: 76,
+    name: "Sterak's Gage",
+    category: "Fighter",
+    price: 3100,
+    stats: "+400 HP, +40 AD",
+    passive: "Shield przy niskim HP",
+    description: "Defensive bruiser item",
+    whenToBuy: "Przeciwko burst damage",
+    goodFor: ["Fighter", "Top"],
+    image: "3053"
+  },
+  {
+    id: 77,
+    name: "Titanic Hydra",
+    category: "Fighter",
+    price: 3300,
+    stats: "+500 HP, +50 AD",
+    passive: "AoE on-hit damage based on HP",
+    description: "HP bruiser item",
+    whenToBuy: "Dla tanky bruiserów",
+    goodFor: ["Fighter", "Tank"],
+    image: "3748"
+  },
+  {
+    id: 78,
+    name: "Ravenous Hydra",
+    category: "Fighter",
+    price: 3300,
+    stats: "+70 AD, +20 AH",
+    passive: "AoE damage + omnivamp",
+    description: "Lifesteal bruiser item",
+    whenToBuy: "Dla sustain i wave clear",
+    goodFor: ["Fighter", "Assassin"],
+    image: "3074"
+  },
+  {
+    id: 79,
+    name: "Hullbreaker",
+    category: "Fighter",
+    price: 2800,
+    stats: "+50 AD, +400 HP",
+    passive: "Bonus damage do struktur gdy sam",
+    description: "Split push item",
+    whenToBuy: "Dla split pushers",
+    goodFor: ["Fighter", "Top"],
+    image: "3181"
+  },
+  {
+    id: 80,
+    name: "Wit's End",
+    category: "Fighter",
+    price: 2800,
+    stats: "+40% AS, +50 MR",
+    passive: "On-hit magic damage + steal MR",
+    description: "Anti-AP on-hit item",
+    whenToBuy: "Przeciwko AP jako on-hit champion",
+    goodFor: ["Fighter", "ADC on-hit"],
+    image: "3091"
+  },
+  {
+    id: 81,
+    name: "Silvermere Dawn",
+    category: "Fighter",
+    price: 2800,
+    stats: "+40 AD, +300 HP, +40 MR",
+    passive: "Aktywna: Cleanse CC + tenacity",
+    description: "Anti-CC fighter item",
+    whenToBuy: "Przeciwko heavy CC",
+    goodFor: ["Fighter", "Top"],
+    image: "6035"
+  },
+
+  // ==================== ON-HIT ITEMS ====================
+  {
+    id: 82,
+    name: "Blade of the Ruined King",
+    category: "On-hit",
+    price: 3200,
+    stats: "+40 AD, +25% AS",
+    passive: "% current HP damage on-hit + lifesteal",
+    description: "On-hit vs tanks",
+    whenToBuy: "Przeciwko high HP targets",
+    goodFor: ["ADC", "Fighter"],
+    image: "3153"
+  },
+  {
+    id: 83,
+    name: "Guinsoo's Rageblade",
+    category: "On-hit",
+    price: 2600,
+    stats: "+35 AD, +35 AP, +25% AS",
+    passive: "Converts crit to on-hit damage",
+    description: "Hybrid on-hit item",
+    whenToBuy: "Dla on-hit builds (Yi, Kog'Maw)",
+    goodFor: ["ADC on-hit", "Fighter"],
+    image: "3124"
+  },
+
+  // ==================== JUNGLE ITEMS ====================
+  {
+    id: 84,
+    name: "Scorchclaw Pup",
+    category: "Jungle",
+    price: 450,
+    stats: "Jungle starting item",
+    passive: "Evolves as you clear jungle",
+    description: "AD jungle starter",
+    whenToBuy: "Start gry dla AD junglers",
+    goodFor: ["Jungle AD"],
+    image: "1039"
+  },
+  {
+    id: 85,
+    name: "Mosstomper Seedling",
+    category: "Jungle",
+    price: 450,
+    stats: "Jungle starting item",
+    passive: "Evolves - gives shield",
+    description: "Tank jungle starter",
+    whenToBuy: "Start gry dla tanków jungle",
+    goodFor: ["Jungle Tank"],
+    image: "1041"
+  },
+  {
+    id: 86,
+    name: "Gustwalker Hatchling",
+    category: "Jungle",
+    price: 450,
+    stats: "Jungle starting item",
+    passive: "Evolves - gives slow + MS",
+    description: "AP/Utility jungle starter",
+    whenToBuy: "Start gry dla AP junglers",
+    goodFor: ["Jungle AP"],
+    image: "1040"
+  },
+
+  // ==================== CONSUMABLES ====================
+  {
+    id: 87,
+    name: "Control Ward",
+    category: "Consumable",
+    price: 75,
+    stats: "Vision",
+    passive: "Reveals invisible units, blocks 1 ward",
+    description: "Essential vision item",
+    whenToBuy: "Zawsze noś 1-2 w inventory",
+    goodFor: ["Everyone"],
+    image: "2055"
+  },
+  {
+    id: 88,
+    name: "Stealth Ward",
+    category: "Consumable",
+    price: 0,
+    stats: "Vision",
+    passive: "Invisible ward (trinket)",
+    description: "Basic vision trinket",
+    whenToBuy: "Free trinket",
+    goodFor: ["Everyone"],
+    image: "3340"
+  },
+  {
+    id: 89,
+    name: "Oracle Lens",
+    category: "Consumable",
+    price: 0,
+    stats: "Vision denial",
+    passive: "Reveals enemy wards",
+    description: "Ward clearing trinket",
+    whenToBuy: "Mid-late game dla supports/tanks",
+    goodFor: ["Support", "Tank", "Jungle"],
+    image: "3364"
+  },
+  {
+    id: 90,
+    name: "Farsight Alteration",
+    category: "Consumable",
+    price: 0,
+    stats: "Long range vision",
+    passive: "Long range visible ward",
+    description: "Scouting trinket",
+    whenToBuy: "Late game dla ADCs",
+    goodFor: ["ADC"],
+    image: "3363"
+  },
+
+  // ==================== SPECIAL/SITUATIONAL ITEMS ====================
+  {
+    id: 91,
+    name: "Stopwatch",
+    category: "Special",
+    price: 650,
+    stats: "Brak",
+    passive: "One-time Zhonya active",
+    description: "One-time stasis",
+    whenToBuy: "Component lub emergency buy",
+    goodFor: ["Everyone"],
+    image: "2420"
+  },
+  {
+    id: 92,
+    name: "Tear of the Goddess",
+    category: "Special",
+    price: 400,
+    stats: "+240 Mana",
+    passive: "Stacks mana over time",
+    description: "Mana scaling component",
+    whenToBuy: "Early dla mana-hungry champions",
+    goodFor: ["Mid AP", "ADC"],
+    image: "3070"
+  },
+  {
+    id: 93,
+    name: "Seraph's Embrace",
+    category: "Special",
+    price: 2900,
+    stats: "+80 AP, +860 Mana",
+    passive: "Converts mana to AP + shield active",
+    description: "Evolved Tear",
+    whenToBuy: "Late game mana item",
+    goodFor: ["Mid AP"],
+    image: "3040"
+  },
+  {
+    id: 94,
+    name: "Manamune",
+    category: "Special",
+    price: 2900,
+    stats: "+35 AD, +860 Mana",
+    passive: "Converts mana to damage",
+    description: "AD Tear evolution",
+    whenToBuy: "Dla poke ADCs (Ezreal)",
+    goodFor: ["ADC"],
+    image: "3004"
+  },
+  {
+    id: 95,
+    name: "Mejai's Soulstealer",
+    category: "Special",
+    price: 1600,
+    stats: "+20 AP",
+    passive: "Stacks AP on kills/assists (loses on death)",
+    description: "Snowball AP item",
+    whenToBuy: "Gdy hard carryjujesz",
+    goodFor: ["Mid AP"],
+    image: "3041"
+  },
+  {
+    id: 96,
+    name: "Umbral Glaive",
+    category: "Special",
+    price: 2400,
+    stats: "+50 AD, +15 Lethality, +15 AH",
+    passive: "One-shots wards + vision on ward kill",
+    description: "Vision denial item",
+    whenToBuy: "Dla assassinów clearing wards",
+    goodFor: ["Assassin", "Support"],
+    image: "3179"
+  },
+  {
+    id: 97,
+    name: "Serpent's Fang",
+    category: "Special",
+    price: 2600,
+    stats: "+55 AD, +18 Lethality",
+    passive: "Shield reduction",
+    description: "Anti-shield item",
+    whenToBuy: "Przeciwko shield-heavy teamom",
+    goodFor: ["Assassin"],
+    image: "6695"
+  },
+  {
+    id: 98,
+    name: "Chempunk Chainsword",
+    category: "Special",
+    price: 2600,
+    stats: "+55 AD, +250 HP, +15 AH",
+    passive: "Grievous wounds on physical damage",
+    description: "AD anti-heal",
+    whenToBuy: "Przeciwko healing jako AD",
+    goodFor: ["Fighter", "Assassin"],
+    image: "3011"
+  },
+  {
+    id: 99,
+    name: "Executioner's Calling",
+    category: "Special",
+    price: 800,
+    stats: "+15 AD",
+    passive: "Grievous wounds",
+    description: "Early anti-heal component",
+    whenToBuy: "Early przeciwko healing",
+    goodFor: ["ADC", "Fighter"],
+    image: "3123"
+  },
+  {
+    id: 100,
+    name: "Oblivion Orb",
+    category: "Special",
+    price: 800,
+    stats: "+30 AP",
+    passive: "Grievous wounds",
+    description: "AP anti-heal component",
+    whenToBuy: "Early przeciwko healing jako AP",
+    goodFor: ["Mid AP", "Support AP"],
+    image: "3916"
+  },
+  {
+    id: 101,
+    name: "Bramble Vest",
+    category: "Special",
+    price: 800,
+    stats: "+35 Armor",
+    passive: "Reflects damage + grievous wounds",
+    description: "Tank anti-heal component",
+    whenToBuy: "Early przeciwko healing AD",
+    goodFor: ["Tank", "Fighter"],
+    image: "3076"
+  },
+  {
+    id: 102,
+    name: "Hexdrinker",
+    category: "Special",
+    price: 1300,
+    stats: "+25 AD, +35 MR",
+    passive: "Shield vs magic damage",
+    description: "Early anti-AP component",
+    whenToBuy: "Laning vs AP",
+    goodFor: ["Assassin", "Fighter"],
+    image: "3155"
+  },
+  {
+    id: 103,
+    name: "Serrated Dirk",
+    category: "Special",
+    price: 1100,
+    stats: "+25 AD, +10 Lethality",
+    passive: "Brak",
+    description: "Lethality component",
+    whenToBuy: "Component dla lethality items",
+    goodFor: ["Assassin"],
+    image: "3134"
+  },
+  {
+    id: 104,
+    name: "Last Whisper",
+    category: "Special",
+    price: 1450,
+    stats: "+20 AD, +20% Armor Pen",
+    passive: "Brak",
+    description: "Armor pen component",
+    whenToBuy: "Component vs armor",
+    goodFor: ["ADC", "Assassin"],
+    image: "3035"
+  },
+  {
+    id: 105,
+    name: "Recurve Bow",
+    category: "Special",
+    price: 900,
+    stats: "+25% AS",
+    passive: "+15 on-hit damage",
+    description: "AS component",
+    whenToBuy: "Component dla AS items",
+    goodFor: ["ADC", "Fighter"],
+    image: "1043"
   }
 ];
 
 // Przykładowe buildy dla każdej roli
 export const sampleBuilds = [
   {
-    role: "ADC",
-    champion: "Ashe",
-    items: ["Kraken Slayer", "Berserker's Greaves", "The Collector", "Infinity Edge", "Lord Dominik's Regards", "Guardian Angel"],
-    description: "Standard ADC build - crit focus"
+    role: "ADC - Crit Build",
+    champion: "Jinx",
+    items: ["Kraken Slayer", "Berserker's Greaves", "Infinity Edge", "The Collector", "Lord Dominik's Regards", "Guardian Angel"],
+    description: "Standard crit ADC build - wysoki damage"
   },
   {
-    role: "Mid AP",
+    role: "ADC - On-Hit Build",
+    champion: "Kog'Maw",
+    items: ["Kraken Slayer", "Berserker's Greaves", "Blade of the Ruined King", "Guinsoo's Rageblade", "Wit's End", "Runaan's Hurricane"],
+    description: "On-hit build vs tanków"
+  },
+  {
+    role: "Mid AP - Burst Mage",
     champion: "Lux",
-    items: ["Luden's Tempest", "Sorcerer's Shoes", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff", "Morellonomicon"],
-    description: "Burst mage build z survivability"
+    items: ["Luden's Tempest", "Sorcerer's Shoes", "Shadowflame", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"],
+    description: "Burst mage build - one-shot combo"
+  },
+  {
+    role: "Mid AP - Battle Mage",
+    champion: "Vladimir",
+    items: ["Hextech Rocketbelt", "Sorcerer's Shoes", "Cosmic Drive", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"],
+    description: "Sustained damage battle mage"
   },
   {
     role: "Top Tank",
     champion: "Malphite",
-    items: ["Sunfire Aegis", "Plated Steelcaps", "Thornmail", "Spirit Visage", "Randuin's Omen", "Warmog's Armor"],
+    items: ["Sunfire Aegis", "Plated Steelcaps", "Thornmail", "Frozen Heart", "Spirit Visage", "Warmog's Armor"],
     description: "Full tank build przeciwko AD"
   },
   {
-    role: "Support",
+    role: "Top Bruiser",
+    champion: "Darius",
+    items: ["Stridebreaker", "Plated Steelcaps", "Black Cleaver", "Sterak's Gage", "Death's Dance", "Guardian Angel"],
+    description: "Bruiser build - damage + tankiness"
+  },
+  {
+    role: "Jungle Assassin",
+    champion: "Kha'Zix",
+    items: ["Duskblade of Draktharr", "Ionian Boots of Lucidity", "The Collector", "Serylda's Grudge", "Edge of Night", "Guardian Angel"],
+    description: "Assassin jungle - burst damage"
+  },
+  {
+    role: "Jungle Tank",
+    champion: "Amumu",
+    items: ["Sunfire Aegis", "Mercury's Treads", "Thornmail", "Demonic Embrace", "Spirit Visage", "Warmog's Armor"],
+    description: "Tank jungle - engage + tankiness"
+  },
+  {
+    role: "Support Enchanter",
     champion: "Soraka",
-    items: ["Imperial Mandate", "Sorcerer's Shoes", "Redemption", "Mikael's Blessing", "Staff of Flowing Water", "Ardent Censer"],
-    description: "Enchanter support build - max healing"
+    items: ["Moonstone Renewer", "Ionian Boots of Lucidity", "Redemption", "Staff of Flowing Water", "Ardent Censer", "Mikael's Blessing"],
+    description: "Enchanter support - max healing"
+  },
+  {
+    role: "Support Tank",
+    champion: "Leona",
+    items: ["Turbo Chemtank", "Mobility Boots", "Thornmail", "Zeke's Convergence", "Knight's Vow", "Gargoyle Stoneplate"],
+    description: "Tank support - engage + peel"
   }
 ];

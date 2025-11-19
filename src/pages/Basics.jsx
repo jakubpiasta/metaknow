@@ -6,6 +6,47 @@ export default function Basics() {
   const [searchChampion, setSearchChampion] = useState('');
   const [counterResults, setCounterResults] = useState(null);
 
+  // Baza danych counterów
+  const championCounters = {
+    // Top Lane
+    "Darius": { counters: ["Teemo", "Quinn", "Vayne"], goodAgainst: ["Garen", "Sett", "Mordekaiser"], role: "Top" },
+    "Garen": { counters: ["Teemo", "Vayne", "Quinn"], goodAgainst: ["Yasuo", "Riven", "Irelia"], role: "Top" },
+    "Malphite": { counters: ["Mordekaiser", "Cho'Gath", "Vladimir"], goodAgainst: ["Yasuo", "Fiora", "Tryndamere"], role: "Top" },
+    // Jungle
+    "Master Yi": { counters: ["Rammus", "Jax", "Warwick"], goodAgainst: ["Karthus", "Evelynn", "Fiddlesticks"], role: "Jungle" },
+    "Warwick": { counters: ["Graves", "Kindred", "Kha'Zix"], goodAgainst: ["Evelynn", "Shaco", "Ekko"], role: "Jungle" },
+    "Amumu": { counters: ["Graves", "Nidalee", "Kha'Zix"], goodAgainst: ["Master Yi", "Warwick", "Viego"], role: "Jungle" },
+    // Mid Lane
+    "Yasuo": { counters: ["Annie", "Malzahar", "Pantheon"], goodAgainst: ["Lux", "Xerath", "Vel'Koz"], role: "Mid" },
+    "Zed": { counters: ["Malzahar", "Lissandra", "Kayle"], goodAgainst: ["Lux", "Xerath", "Syndra"], role: "Mid" },
+    "Ahri": { counters: ["Kassadin", "Vladimir", "Fizz"], goodAgainst: ["Xerath", "Lux", "Syndra"], role: "Mid" },
+    "Lux": { counters: ["Zed", "Fizz", "LeBlanc"], goodAgainst: ["Xerath", "Vel'Koz", "Syndra"], role: "Mid" },
+    // ADC
+    "Jinx": { counters: ["Draven", "Lucian", "Caitlyn"], goodAgainst: ["Kog'Maw", "Twitch", "Vayne"], role: "ADC" },
+    "Ashe": { counters: ["Draven", "Lucian", "Sivir"], goodAgainst: ["Vayne", "Kog'Maw", "Twitch"], role: "ADC" },
+    "Caitlyn": { counters: ["Sivir", "Lucian", "Draven"], goodAgainst: ["Vayne", "Kog'Maw", "Ezreal"], role: "ADC" },
+    "Miss Fortune": { counters: ["Sivir", "Lucian", "Ezreal"], goodAgainst: ["Kog'Maw", "Twitch", "Vayne"], role: "ADC" },
+    // Support
+    "Thresh": { counters: ["Morgana", "Janna", "Lulu"], goodAgainst: ["Soraka", "Yuumi", "Sona"], role: "Support" },
+    "Leona": { counters: ["Morgana", "Tahm Kench", "Janna"], goodAgainst: ["Soraka", "Yuumi", "Sona"], role: "Support" },
+    "Soraka": { counters: ["Blitzcrank", "Pyke", "Zyra"], goodAgainst: ["Braum", "Alistar", "Leona"], role: "Support" },
+  };
+
+  // Funkcje
+  const handleSearchCounter = () => {
+    const champion = searchChampion.trim();
+    if (championCounters[champion]) {
+      setCounterResults(championCounters[champion]);
+    } else {
+      setCounterResults({ error: true });
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchChampion('');
+    setCounterResults(null);
+  };
+
   const roles = [
     {
       name: 'Top Lane',
@@ -145,6 +186,16 @@ export default function Basics() {
           >
             🎯 Cele
           </button>
+          <button
+            onClick={() => setActiveTab('counters')}
+            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+              activeTab === 'counters'
+                ? 'bg-lol-blue text-white shadow-lg scale-105'
+                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+            }`}
+          >
+            ⚔️ Counter Search
+          </button>
         </div>
 
         {/* Zawartość zakładek */}
@@ -231,6 +282,139 @@ export default function Basics() {
                   <p className="text-gray-300 text-sm">{obj.info}</p>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* COUNTER SEARCH */}
+          {activeTab === 'counters' && (
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gray-800 rounded-lg p-8 border border-lol-gold/30 mb-8">
+                <h3 className="text-2xl font-bold text-lol-gold mb-4 text-center">
+                  🔍 Znajdź Countery dla Championa
+                </h3>
+                <p className="text-gray-300 text-center mb-6">
+                  Wpisz nazwę championa, aby zobaczyć kto go counteruje i przeciwko komu jest dobry
+                </p>
+
+                {/* Search Bar */}
+                <div className="flex gap-3 mb-4">
+                  <input
+                    type="text"
+                    value={searchChampion}
+                    onChange={(e) => setSearchChampion(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleSearchCounter()}
+                    placeholder="Wpisz nazwę championa (np. Yasuo, Darius, Lux)..."
+                    className="flex-1 px-4 py-3 bg-gray-900 text-white border border-lol-blue/30 rounded-lg focus:outline-none focus:border-lol-blue"
+                  />
+                  <button
+                    onClick={handleSearchCounter}
+                    className="bg-lol-blue hover:bg-lol-gold text-white hover:text-lol-dark font-bold px-8 py-3 rounded-lg transition-all"
+                  >
+                    Szukaj
+                  </button>
+                  {counterResults && (
+                    <button
+                      onClick={clearSearch}
+                      className="bg-gray-700 hover:bg-gray-600 text-white font-bold px-6 py-3 rounded-lg transition-all"
+                    >
+                      Wyczyść
+                    </button>
+                  )}
+                </div>
+
+                {/* Popular Champions */}
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <p className="text-gray-400 text-sm w-full text-center mb-2">Popularne:</p>
+                  {['Yasuo', 'Zed', 'Darius', 'Jinx', 'Thresh', 'Master Yi', 'Lux', 'Ahri'].map(champ => (
+                    <button
+                      key={champ}
+                      onClick={() => {
+                        setSearchChampion(champ);
+                        if (championCounters[champ]) {
+                          setCounterResults(championCounters[champ]);
+                        } else {
+                          setCounterResults({ error: true });
+                        }
+                      }}
+                      className="bg-gray-700 hover:bg-lol-blue text-gray-300 hover:text-white px-3 py-1 rounded text-sm transition-all"
+                    >
+                      {champ}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Results */}
+              {counterResults && !counterResults.error && (
+                <div className="space-y-6">
+                  <div className="bg-gray-800 rounded-lg p-6 border-l-4 border-lol-gold">
+                    <div className="flex items-center gap-3">
+                      <span className="text-4xl">🎮</span>
+                      <div>
+                        <h4 className="text-2xl font-bold text-lol-gold">{searchChampion}</h4>
+                        <p className="text-gray-400">{counterResults.role}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Counters */}
+                  <div className="bg-gradient-to-br from-red-900/20 to-gray-800 rounded-lg p-6 border-2 border-red-500/30">
+                    <h4 className="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
+                      <span>✗</span> Słaby przeciwko:
+                    </h4>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {counterResults.counters.map((counter, i) => (
+                        <div
+                          key={i}
+                          className="bg-gray-900/50 p-4 rounded-lg text-center border border-red-500/20"
+                        >
+                          <p className="text-white font-bold text-lg">{counter}</p>
+                          <p className="text-red-400 text-sm mt-1">Unikaj tego matchupu!</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Good Against */}
+                  <div className="bg-gradient-to-br from-green-900/20 to-gray-800 rounded-lg p-6 border-2 border-green-500/30">
+                    <h4 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                      <span>✓</span> Dobry przeciwko:
+                    </h4>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {counterResults.goodAgainst.map((good, i) => (
+                        <div
+                          key={i}
+                          className="bg-gray-900/50 p-4 rounded-lg text-center border border-green-500/20"
+                        >
+                          <p className="text-white font-bold text-lg">{good}</p>
+                          <p className="text-green-400 text-sm mt-1">Świetny pick!</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tips */}
+                  <div className="bg-lol-blue/20 border border-lol-blue/50 rounded-lg p-6">
+                    <h4 className="text-lg font-bold text-lol-blue mb-3">💡 Wskazówki:</h4>
+                    <ul className="text-gray-300 space-y-2 text-sm">
+                      <li>• <strong>Countery</strong> to championi którzy mają przewagę w tym matchupie</li>
+                      <li>• <strong>Dobre matchupy</strong> to championi przeciwko którym masz przewagę</li>
+                      <li>• Pamiętaj: skill i doświadczenie są ważniejsze niż countery!</li>
+                      <li>• Zawsze lepiej grać championem którego znasz, niż counterem którego nie umiesz</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Error */}
+              {counterResults && counterResults.error && (
+                <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-6 text-center">
+                  <p className="text-red-400 text-lg font-bold mb-2">😕 Champion nie znaleziony</p>
+                  <p className="text-gray-300 text-sm">
+                    Sprawdź pisownię lub wybierz z popularnych championów powyżej
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>

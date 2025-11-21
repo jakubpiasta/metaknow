@@ -1,36 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { championCounters } from '../data/championCounters';
 
 export default function Basics() {
   const [activeTab, setActiveTab] = useState('roles');
   const [searchChampion, setSearchChampion] = useState('');
   const [counterResults, setCounterResults] = useState(null);
-
-  // Baza danych counterów
-  const championCounters = {
-    // Top Lane
-    "Darius": { counters: ["Teemo", "Quinn", "Vayne"], goodAgainst: ["Garen", "Sett", "Mordekaiser"], role: "Top" },
-    "Garen": { counters: ["Teemo", "Vayne", "Quinn"], goodAgainst: ["Yasuo", "Riven", "Irelia"], role: "Top" },
-    "Malphite": { counters: ["Mordekaiser", "Cho'Gath", "Vladimir"], goodAgainst: ["Yasuo", "Fiora", "Tryndamere"], role: "Top" },
-    // Jungle
-    "Master Yi": { counters: ["Rammus", "Jax", "Warwick"], goodAgainst: ["Karthus", "Evelynn", "Fiddlesticks"], role: "Jungle" },
-    "Warwick": { counters: ["Graves", "Kindred", "Kha'Zix"], goodAgainst: ["Evelynn", "Shaco", "Ekko"], role: "Jungle" },
-    "Amumu": { counters: ["Graves", "Nidalee", "Kha'Zix"], goodAgainst: ["Master Yi", "Warwick", "Viego"], role: "Jungle" },
-    // Mid Lane
-    "Yasuo": { counters: ["Annie", "Malzahar", "Pantheon"], goodAgainst: ["Lux", "Xerath", "Vel'Koz"], role: "Mid" },
-    "Zed": { counters: ["Malzahar", "Lissandra", "Kayle"], goodAgainst: ["Lux", "Xerath", "Syndra"], role: "Mid" },
-    "Ahri": { counters: ["Kassadin", "Vladimir", "Fizz"], goodAgainst: ["Xerath", "Lux", "Syndra"], role: "Mid" },
-    "Lux": { counters: ["Zed", "Fizz", "LeBlanc"], goodAgainst: ["Xerath", "Vel'Koz", "Syndra"], role: "Mid" },
-    // ADC
-    "Jinx": { counters: ["Draven", "Lucian", "Caitlyn"], goodAgainst: ["Kog'Maw", "Twitch", "Vayne"], role: "ADC" },
-    "Ashe": { counters: ["Draven", "Lucian", "Sivir"], goodAgainst: ["Vayne", "Kog'Maw", "Twitch"], role: "ADC" },
-    "Caitlyn": { counters: ["Sivir", "Lucian", "Draven"], goodAgainst: ["Vayne", "Kog'Maw", "Ezreal"], role: "ADC" },
-    "Miss Fortune": { counters: ["Sivir", "Lucian", "Ezreal"], goodAgainst: ["Kog'Maw", "Twitch", "Vayne"], role: "ADC" },
-    // Support
-    "Thresh": { counters: ["Morgana", "Janna", "Lulu"], goodAgainst: ["Soraka", "Yuumi", "Sona"], role: "Support" },
-    "Leona": { counters: ["Morgana", "Tahm Kench", "Janna"], goodAgainst: ["Soraka", "Yuumi", "Sona"], role: "Support" },
-    "Soraka": { counters: ["Blitzcrank", "Pyke", "Zyra"], goodAgainst: ["Braum", "Alistar", "Leona"], role: "Support" },
-  };
 
   // Funkcje
   const handleSearchCounter = () => {

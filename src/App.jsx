@@ -4,6 +4,7 @@ import Basics from './pages/Basics';
 import Items from './pages/Items';
 import Meta from './pages/Meta';
 import Quiz from './pages/Quiz';
+import Glossary from './pages/Glossary';
 import logo from './assets/logo.png';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
     </Link>
     <div className="flex gap-6 text-sm">
       <Link to="/basics" className="hover:text-lol-blue">Podstawy</Link>
+      <Link to="/glossary" className="hover:text-lol-blue">Słownik</Link>
       <Link to="/items" className="hover:text-lol-blue">Przedmioty</Link>
       <Link to="/meta" className="hover:text-lol-blue">Meta</Link>
       <Link to="/quiz" className="hover:text-lol-blue">Quiz</Link>
@@ -30,6 +32,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/basics" element={<Basics />} />
+          <Route path="/glossary" element={<Glossary />} />
           <Route path="/items" element={<Items />} />
           <Route path="/meta" element={<Meta />} />
           <Route path="/quiz" element={<Quiz />} />

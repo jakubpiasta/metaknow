@@ -7,7 +7,7 @@ export default function Basics() {
   const [searchChampion, setSearchChampion] = useState('');
   const [counterResults, setCounterResults] = useState(null);
 
-  // Funkcje
+  // Funkcje wyszukiwania
   const handleSearchCounter = () => {
     const champion = searchChampion.trim();
     if (championCounters[champion]) {
@@ -90,6 +90,36 @@ export default function Basics() {
       term: 'Wave Management',
       definition: 'Kontrolowanie pozycji fali minionów.',
       importance: 'Umożliwia bezpieczny farm lub agresywną grę'
+    },
+    {
+      term: 'Roaming',
+      definition: 'Opuszczanie swojej linii żeby pomóc innym liniom.',
+      importance: 'Zwiększa pressure na mapie i pomaga teamowi'
+    },
+    {
+      term: 'Kiting',
+      definition: 'Atakowanie podczas poruszania się - utrzymywanie dystansu.',
+      importance: 'Kluczowe dla ADC - zadajesz damage będąc bezpieczny'
+    },
+    {
+      term: 'Peel',
+      definition: 'Ochrona carry poprzez odciąganie wrogów (CC, knockback).',
+      importance: 'Support/Tank chroni ADC przed assassynami'
+    },
+    {
+      term: 'Engage',
+      definition: 'Rozpoczęcie walki - wskoczenie do wroga.',
+      importance: 'Dobry engage wygrywa teamfighty'
+    },
+    {
+      term: 'Recall / Back',
+      definition: 'Teleport do bazy (8 sekund). Kupujesz itemy i healujesz.',
+      importance: 'Używaj po push-nięciu fali lub po zabójstwie'
+    },
+    {
+      term: 'CC (Crowd Control)',
+      definition: 'Efekty kontroli: stun, root, slow, knock-up.',
+      importance: 'Uniemożliwia wrogowi ruch lub atakowanie'
     }
   ];
 
